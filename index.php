@@ -101,10 +101,14 @@
 if(isset($_POST['submit'])) {
   //Error checking
   if($_POST['fname']) {
-    echo"<p>Please supply your name.</p>\n";
-  }
-  if($_POST['famname']) {
-    echo "<p>Please supply your address.</p>\n";
+    echo"<p>First Name.  </p>".$_POST['fname']."\n" ;
+	echo"<p>Family Name.  </p>".$_POST['famname']."\n" ;
+	echo"<p>Age Group.  </p>".$_POST['agegroup']."\n" ;
+	echo"<p>Contact Number.  </p>".$_POST['tel']."\n" ;
+	echo"<p>Email address.  </p>".$_POST['email']."\n" ;
+	echo"<p>Desired Passive Income.  </p>".$_POST['income']."\n" ;
+	echo"<p>Monthly Savings.  </p>".$_POST['saving']."\n" ;
+	echo"<p>Referral.  </p>".$_POST['referral']."\n" ;
   }
 
 }

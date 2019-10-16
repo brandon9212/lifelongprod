@@ -94,6 +94,23 @@
 
 <body>
 
+
+<?php
+
+//Form submitted
+if(isset($_POST['submit'])) {
+  //Error checking
+  if($_POST['fname']) {
+    echo"<p>Please supply your name.</p>\n";
+  }
+  if($_POST['famname']) {
+    echo "<p>Please supply your address.</p>\n";
+  }
+
+}
+
+?>
+
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
@@ -267,7 +284,7 @@
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
 
-          <form name="contact_form" data-toggle="validator" method="post" action="/emails.php">
+          <form name="contact_form" data-toggle="validator" method="post" action="<?=$_SERVER['PHP_SELF']?>">
 
             <div class="form-row">
               <div class="form-group col-md-4">
@@ -344,7 +361,7 @@
             </div>
 
             <br>
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+            <button type="submit" name="submit" id="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
             <div id="success_message" style="width:100%; height:100%; display:none; ">
                 <h3>Posted your message successfully!</h3>
             </div>

@@ -256,74 +256,7 @@
       </div>
     </div>
   </section>
-        <?php
 
-					// Import PHPMailer classes into the global namespace
-					// These must be at the top of your script, not inside a function
-					use PHPMailer\PHPMailer\PHPMailer;
-					use PHPMailer\PHPMailer\Exception;
-
-					// If necessary, modify the path in the require statement below to refer to the
-					// location of your Composer autoload.php file.
-					require 'vendor/autoload.php';
-
-					// Replace sender@example.com with your "From" address.
-					// This address must be verified with Amazon SES.
-					$sender = 'samuel.webhosting@gmail.com';
-					$senderName = 'Samuel';
-
-					// Replace recipient@example.com with a "To" address. If your account
-					// is still in the sandbox, this address must be verified.
-					$recipient = 'brandon92@hotmail.sg';
-
-					// Replace smtp_username with your Amazon SES SMTP user name.
-					$usernameSmtp = 'AKIA37MXBNKDPVSEOPVP';
-
-					// Replace smtp_password with your Amazon SES SMTP password.
-					$passwordSmtp = 'BGNv6T2XNlaBsurBgH43HUuGWb1niuZyxhDbr6ejPJLE';
-
-					// Specify a configuration set. If you do not want to use a configuration
-					// set, comment or remove the next line.
-					//$configurationSet = 'ConfigSet';
-
-					// If you're using Amazon SES in a region other than US West (Oregon),
-					// replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP
-					// endpoint in the appropriate region.
-					$host = 'email-smtp.us-west-2.amazonaws.com';
-					$port = 587;
-
-					// The subject line of the email
-					$subject = 'TEST EMAIL!!!';
-
-					// The plain-text body of the email
-					$bodyText =  "Email Test\r\nThis email was sent through the
-						Amazon SES SMTP interface using the PHPMailer class.";
-
-					// The HTML-formatted body of the email
-					$bodyHtml = '<h1>Email Test</h1>
-						<p>This email was sent through the
-						<a href="https://aws.amazon.com/ses">Amazon SES</a> SMTP
-						interface using the <a href="https://github.com/PHPMailer/PHPMailer">
-						PHPMailer</a> class.</p>';
-
-					$mail = new PHPMailer(true);
-						$mail->isSMTP();
-						$mail->setFrom($sender, $senderName);
-						$mail->Username   = $usernameSmtp;
-						$mail->Password   = $passwordSmtp;
-						$mail->Host       = $host;
-						$mail->Port       = $port;
-						$mail->SMTPAuth   = true;
-						$mail->SMTPSecure = 'tls';
-						$mail->addAddress($recipient);
-						$mail->isHTML(true);
-						$mail->Subject    = $subject;
-						$mail->Body       = $bodyHtml;
-						$mail->AltBody    = $bodyText;
-						$mail->Send();
-
-					
-        ?>
   <!-- Contact form-->
   <section class="call-to-action text-white text-center">
     <div class="overlay"></div>
@@ -334,29 +267,29 @@
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
 
-          <form name="contact_form" data-toggle="validator" method="post" >
+          <form name="contact_form" data-toggle="validator" method="post" action="/emails.php">
 
             <div class="form-row">
               <div class="form-group col-md-4">
                 <label for="FirstName">First Name*</label>
-                <input type="text" class="form-control" id="FirstName" aria-describedby="nameHelp" placeholder="First name" required>
+                <input type="text" class="form-control" name="fname" id="FirstName" aria-describedby="nameHelp" placeholder="First name" required>
               </div>
 
               <div class="form-group col-md-4">
                 <label for="FamName">Family Name*</label>
-                <input type="text" class="form-control" id="FamName" aria-describedby="nameHelp" placeholder="Family name" required>
+                <input type="text" class="form-control" name="famname" id="FamName" aria-describedby="nameHelp" placeholder="Family name" required>
               </div>
 
               <div class="form-group col-md-4">
                 <label for="AgeGroup">Age group*</label>
-                <select class="form-control" required>
-                  <option>Below 25 years old</option>
-                  <option>25 - 30 years old</option>
-                  <option>31 - 35 years old</option>
-                  <option>36 - 40 years old</option>
-                  <option>41 - 45 years old</option>
-                  <option>46 - 50 years old</option>
-                  <option>Above 50 years old</option>
+                <select class="form-control" name="agegroup" required>
+                  <option value='0025'>Below 25 years old</option>
+                  <option value='2530'>25 - 30 years old</option>
+                  <option value='3135'>31 - 35 years old</option>
+                  <option value='3640'>36 - 40 years old</option>
+                  <option value='4145'>41 - 45 years old</option>
+                  <option value='4650'>46 - 50 years old</option>
+                  <option value='0050'>Above 50 years old</option>
                 </select>
               </div>
 
@@ -365,12 +298,12 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="tel">Contact Number*</label>
-                <input type="tel" class="form-control" id="tel" placeholder="(+65) 12345678" pattern="[0-9]{8}" data-error="Singapore phone number contains 8 numbers"  required>
+                <input type="tel" class="form-control" name='tel' id="tel" placeholder="(+65) 12345678" pattern="[0-9]{8}" data-error="Singapore phone number contains 8 numbers"  required>
               </div>
 
               <div class="form-group col-md-6">
                 <label for="email">Email address*</label>
-                <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
               </div>
 
             </div>
@@ -378,22 +311,22 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="DesiredIncome">Desired Passive Income*</label>
-                <select class="form-control" required>
-                  <option>Less than $500/month</option>
-                  <option>$1000/month</option>
-                  <option>$2000/month</option>
-                  <option>$3000/month</option>
-                  <option>More than $3000/month</option>
+                <select class="form-control" name="income" required>
+                  <option value='500'>Less than $500/month</option>
+                  <option value='1000'>$1000/month</option>
+                  <option value='2000'>$2000/month</option>
+                  <option value='3000'>$3000/month</option>
+                  <option value='3001'>More than $3000/month</option>
                 </select>
               </div>
 
               <div class="form-group col-md-6">
                 <label for="MthySavings">Monthly Savings willing to set aside*</label>
-                <select class="form-control" required>
-                  <option>$500 - $1000/month</option>
-                  <option>$1001 - $2000/month</option>
-                  <option>$2001 - $3000/month</option>
-                  <option>More than $3000/month</option>
+                <select class="form-control" name="saving" required>
+                  <option value='500'>$500 - $1000/month</option>
+                  <option value='1000'>$1001 - $2000/month</option>
+                  <option value='2000'>$2001 - $3000/month</option>
+                  <option value='3000'>More than $3000/month</option>
                 </select>
               </div>
             </div>
@@ -401,7 +334,7 @@
             <div class="form-row">
               <div class="form-group col-md-12">
                 <label for="ReferraltName">Referral Name(If any)</label>
-                <input type="text" class="form-control" id="FirstName" aria-describedby="nameHelp" placeholder="Person that introduce you to us">
+                <input type="text" class="form-control" name="referral" id="FirstName" aria-describedby="nameHelp" placeholder="Person that introduce you to us">
               </div>
             </div>
 

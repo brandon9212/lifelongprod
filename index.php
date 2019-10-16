@@ -307,9 +307,6 @@
 						PHPMailer</a> class.</p>';
 
 					$mail = new PHPMailer(true);
-
-					try {
-						// Specify the SMTP settings.
 						$mail->isSMTP();
 						$mail->setFrom($sender, $senderName);
 						$mail->Username   = $usernameSmtp;
@@ -318,23 +315,14 @@
 						$mail->Port       = $port;
 						$mail->SMTPAuth   = true;
 						$mail->SMTPSecure = 'tls';
-					//    $mail->addCustomHeader('X-SES-CONFIGURATION-SET', $configurationSet);
-
-						// Specify the message recipients.
 						$mail->addAddress($recipient);
-						// You can also add CC, BCC, and additional To recipients here.
-
-						// Specify the content of the message.
 						$mail->isHTML(true);
 						$mail->Subject    = $subject;
 						$mail->Body       = $bodyHtml;
 						$mail->AltBody    = $bodyText;
 						$mail->Send();
-						echo "Email sent!" , PHP_EOL;
-					} catch (phpmailerException $e) {
-						echo "An error occurred. {$e->errorMessage()}", PHP_EOL; //Catch errors from PHPMailer.
-					} catch (Exception $e) {
-						echo "Email not sent. {$mail->ErrorInfo}", PHP_EOL; //Catch errors from Amazon SES.
+
+					
         ?>
   <!-- Contact form-->
   <section class="call-to-action text-white text-center">

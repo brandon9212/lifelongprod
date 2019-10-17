@@ -23,7 +23,20 @@
 
   <!-- Custom styles for this template -->
   <link href="css/landing-page.min.css" rel="stylesheet">
+<?php 
 
+
+					// Import PHPMailer classes into the global namespace
+					// These must be at the top of your script, not inside a function
+					use PHPMailer\PHPMailer\PHPMailer;
+					use PHPMailer\PHPMailer\Exception;
+
+					// If necessary, modify the path in the require statement below to refer to the
+					// location of your Composer autoload.php file.
+					require 'vendor/autoload.php';
+
+
+?>
 
 </head>
 
@@ -44,6 +57,61 @@ if(isset($_POST['submit'])) {
 	echo"<p>Desired Passive Income.  </p>".$_POST['income']."\n" ;
 	echo"<p>Monthly Savings.  </p>".$_POST['saving']."\n" ;
 	echo"<p>Referral.  </p>".$_POST['referral']."\n" ;
+	
+						// Replace sender@example.com with your "From" address.
+					// This address must be verified with Amazon SES.
+					$sender = 'samuel.webhosting@gmail.com';
+					$senderName = 'Samuel';
+
+					// Replace recipient@example.com with a "To" address. If your account
+					// is still in the sandbox, this address must be verified.
+					$recipient = 'brandon92@hotmail.sg';
+
+					// Replace smtp_username with your Amazon SES SMTP user name.
+					$usernameSmtp = 'AKIA37MXBNKDPVSEOPVP';
+
+					// Replace smtp_password with your Amazon SES SMTP password.
+					$passwordSmtp = 'BGNv6T2XNlaBsurBgH43HUuGWb1niuZyxhDbr6ejPJLE';
+
+					// Specify a configuration set. If you do not want to use a configuration
+					// set, comment or remove the next line.
+					//$configurationSet = 'ConfigSet';
+
+					// If you're using Amazon SES in a region other than US West (Oregon),
+					// replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP
+					// endpoint in the appropriate region.
+					$host = 'email-smtp.us-west-2.amazonaws.com';
+					$port = 587;
+
+					// The subject line of the email
+					$subject = 'TEST EMAIL!!!';
+
+					// The plain-text body of the email
+					$bodyText =  "Email Test\r\nThis email was sent through the
+						Amazon SES SMTP interface using the PHPMailer class."$_POST['fname'];
+
+					// The HTML-formatted body of the email
+					$bodyHtml = '<h1>Email Test</h1>
+						<p>This email was sent through the
+						<a href="https://aws.amazon.com/ses">Amazon SES</a> SMTP
+						interface using the <a href="https://github.com/PHPMailer/PHPMailer">
+						PHPMailer</a> class.</p>'$_POST['fname'];
+
+					$mail = new PHPMailer(true);
+						$mail->isSMTP();
+						$mail->setFrom($sender, $senderName);
+						$mail->Username   = $usernameSmtp;
+						$mail->Password   = $passwordSmtp;
+						$mail->Host       = $host;
+						$mail->Port       = $port;
+						$mail->SMTPAuth   = true;
+						$mail->SMTPSecure = 'tls';
+						$mail->addAddress($recipient);
+						$mail->isHTML(true);
+						$mail->Subject    = $subject;
+						$mail->Body       = $bodyHtml;
+						$mail->AltBody    = $bod
+	
   }
 
 }

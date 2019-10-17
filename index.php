@@ -25,71 +25,6 @@
   <link href="css/landing-page.min.css" rel="stylesheet">
 
 
-  <script>
-  $(function()
-  {
-      function after_form_submitted(data)
-      {
-          if(data.result == 'success')
-          {
-              $('form#reused_form').hide();
-              $('#success_message').show();
-              $('#error_message').hide();
-          }
-          else
-          {
-              $('#error_message').append('<ul></ul>');
-
-              jQuery.each(data.errors,function(key,val)
-              {
-                  $('#error_message ul').append('<li>'+key+':'+val+'</li>');
-              });
-              $('#success_message').hide();
-              $('#error_message').show();
-
-              //reverse the response on the button
-              $('button[type="button"]', $form).each(function()
-              {
-                  $btn = $(this);
-                  label = $btn.prop('orig_label');
-                  if(label)
-                  {
-                      $btn.prop('type','submit' );
-                      $btn.text(label);
-                      $btn.prop('orig_label','');
-                  }
-              });
-
-          }//else
-      }
-
-  	$('#reused_form').submit(function(e)
-        {
-          e.preventDefault();
-
-          $form = $(this);
-          //show some response on the button
-          $('button[type="submit"]', $form).each(function()
-          {
-              $btn = $(this);
-              $btn.prop('type','button' );
-              $btn.prop('orig_label',$btn.text());
-              $btn.text('Sending ...');
-          });
-
-
-                      $.ajax({
-                  type: "POST",
-                  url: 'handler.php',
-                  data: $form.serialize(),
-                  success: after_form_submitted,
-                  dataType: 'json'
-              });
-
-        });
-  });
-  </script>
-
 </head>
 
 <body>
@@ -116,12 +51,12 @@ if(isset($_POST['submit'])) {
 ?>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-light bg-light static-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Thinker's Alliance</a>
+  <!-- <nav class="navbar navbar-light bg-light static-top"> -->
+    <!-- <div class="container"> -->
+      <!-- <a class="navbar-brand" href="#">Skys Anchor</a> -->
       <!-- <a class="btn btn-primary" href="#">Sign In</a> -->
-    </div>
-  </nav>
+    <!-- </div> -->
+  <!-- </nav> -->
 
   <!-- Masthead -->
   <header class="masthead text-white text-center">
@@ -133,25 +68,15 @@ if(isset($_POST['submit'])) {
           <p class="lead">Create passive income as low as $20/per day</p>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <!-- <form>
-            <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-              </div>
-              <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-              </div>
-            </div>
-          </form> -->
         </div>
       </div>
     </div>
   </header>
 
   <!-- Table -->
-  <section class="invest_table">
+  <section class="testimonials bg-light">
     <div class="container-fluid features-icons text-center lead" >
-      <h2>Is your money in the right place?</h2>
+      <h2 class="mb-1">Is your money in the right place?</h2>
       <br>
         <table class="table" style="font-size:20px">
           <thead>
@@ -162,7 +87,7 @@ if(isset($_POST['submit'])) {
                   <div class="features-icons-icon d-flex">
                     <i class="fas fa-hand-holding-usd m-auto text-primary" ></i>
                   </div>
-                  <h4>Retire smart fund</h4>
+                  <h5>Retire smart fund</h5>
                 </div>
                 </th>
               <th scope="col">
@@ -170,7 +95,7 @@ if(isset($_POST['submit'])) {
                   <div class="features-icons-icon d-flex">
                     <i class="fa fa-university m-auto text-primary"></i>
                   </div>
-                  <h4>Saving in a bank</h4>
+                  <h5>Saving in a bank</h5>
                 </div>
             </tr>
           </thead>
@@ -217,7 +142,7 @@ if(isset($_POST['submit'])) {
   <!-- Icons Grid -->
   <section class="features-icons bg-light text-center">
     <div class="container">
-      <h2>Retirement Funds for you</h2>
+      <h2 class="mb-5">Retirement Funds for you</h2>
       <br>
       <div class="row">
         <div class="col-lg-3">
@@ -262,9 +187,9 @@ if(isset($_POST['submit'])) {
   </section>
 
   <!-- Testimonials -->
-  <section class="testimonials text-center bg-light">
+  <section class="testimonials text-center">
     <div class="container">
-      <h2 class="mb-5">Meet your Financial Consultant</h2>
+      <h2 class="mb-5">Meet your Financial Advisor</h2>
       <div class="row">
         <div class="col-lg-12">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
@@ -279,12 +204,12 @@ if(isset($_POST['submit'])) {
   </section>
 
   <!-- Contact form-->
-  <section class="call-to-action text-white text-center">
+  <section class="text-center"style="background-color:	#cdebf9; padding-top:2rem; padding-bottom:2rem" >
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
-          <h2 class="mb-4">Ready to get started?</h2>
+          <h2 class="mb-5">Ready to get started?</h2>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
 
@@ -366,40 +291,36 @@ if(isset($_POST['submit'])) {
 
             <br>
             <button type="submit" name="submit" id="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
-            <div id="success_message" style="width:100%; height:100%; display:none; ">
-                <h3>Posted your message successfully!</h3>
-            </div>
-            <div id="error_message" style="width:100%; height:100%; display:none; ">
-              <h3>Error</h3>
-              <p>Sorry there was an error sending your form.</p>
-            </div>
+
           </form>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+ <!-- Footer -->
   <footer class="footer bg-light">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
           <ul class="list-inline mb-2">
+            <h4>Contact Us</h4>
+
             <li class="list-inline-item">
-              <a href="#">About</a>
+              <p>asdad@gmail.com</p>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-              <a href="#">Contact</a>
+              <p>+65 1231312889</p>
             </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
+            <!-- <li class="list-inline-item">&sdot;</li> -->
+            <!-- <li class="list-inline-item">
               <a href="#">Terms of Use</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
               <a href="#">Privacy Policy</a>
-            </li>
+            </li> -->
           </ul>
           <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
         </div>

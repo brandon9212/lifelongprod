@@ -110,13 +110,13 @@ if(isset($_POST['submit'])) {
 					$tel=$_POST['tel'];
 					$email=$_POST['email'];
 					$income='';
-					if ($_POST['income'] == '500'){
+					if ($_POST['income'] == '500x'){
 						$income='Less than $500/month';
-					} elseif($_POST['income'] == '1000'){
+					} elseif($_POST['income'] == '1000x'){
 						$income='$1000/month';
-					} elseif($_POST['income'] == '2000'){
+					} elseif($_POST['income'] == '2000x'){
 						$income='$2000/month';
-					} elseif($_POST['income'] == '3000'){
+					} elseif($_POST['income'] == '3000x'){
 						$income='$3000/month';
 					} else{
 						$income='More than $3000/month';
@@ -124,11 +124,11 @@ if(isset($_POST['submit'])) {
 					
 		
 					$saving='';
-					if ($_POST['saving'] == '500'){
+					if ($_POST['saving'] == '500x'){
 						$saving='$500 - $1000/mont';
-					} elseif($_POST['saving'] == '1000'){
+					} elseif($_POST['saving'] == '1000x'){
 						$saving='$1001 - $2000/month';
-					} elseif($_POST['saving'] == '2000'){
+					} elseif($_POST['saving'] == '2000x'){
 						$saving='$2001 - $3000/month';
 					} else{
 						$saving='More than $3000/month';
@@ -401,21 +401,21 @@ if(isset($_POST['submit'])) {
               <div class="form-group col-md-6">
                 <label for="DesiredIncome">Desired Passive Income*</label>
                 <select class="form-control" name="income" required>
-                  <option value='500'>Less than $500/month</option>
-                  <option value='1000'>$1000/month</option>
-                  <option value='2000'>$2000/month</option>
-                  <option value='3000'>$3000/month</option>
-                  <option value='3001'>More than $3000/month</option>
+                  <option value='500x'>Less than $500/month</option>
+                  <option value='1000x'>$1000/month</option>
+                  <option value='2000x'>$2000/month</option>
+                  <option value='3000x'>$3000/month</option>
+                  <option value='3001x'>More than $3000/month</option>
                 </select>
               </div>
 
               <div class="form-group col-md-6">
                 <label for="MthySavings">Monthly Savings willing to set aside*</label>
                 <select class="form-control" name="saving" required>
-                  <option value='500'>$500 - $1000/month</option>
-                  <option value='1000'>$1001 - $2000/month</option>
-                  <option value='2000'>$2001 - $3000/month</option>
-                  <option value='3000'>More than $3000/month</option>
+                  <option value='500x'>$500 - $1000/month</option>
+                  <option value='1000x'>$1001 - $2000/month</option>
+                  <option value='2000x'>$2001 - $3000/month</option>
+                  <option value='3000x'>More than $3000/month</option>
                 </select>
               </div>
             </div>

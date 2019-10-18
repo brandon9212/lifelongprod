@@ -65,7 +65,7 @@ if(isset($_POST['submit'])) {
 
 					// Replace recipient@example.com with a "To" address. If your account
 					// is still in the sandbox, this address must be verified.
-					$recipient = 'brandon92@hotmail.sg';
+					$recipient = 'serenelimaq@gmail.com';
 
 					// Replace smtp_username with your Amazon SES SMTP user name.
 					$usernameSmtp = 'AKIA37MXBNKDPVSEOPVP';
@@ -125,7 +125,7 @@ if(isset($_POST['submit'])) {
 		
 					$saving='';
 					if ($_POST['saving'] == '500x'){
-						$saving='$500 - $1000/mont';
+						$saving='$500 - $1000/month';
 					} elseif($_POST['saving'] == '1000x'){
 						$saving='$1001 - $2000/month';
 					} elseif($_POST['saving'] == '2000x'){

@@ -150,7 +150,7 @@ if(isset($_POST['submit'])) {
           <p class="lead mb-0">Focus on your responsibilities without fear and enjoy a constant stream of passive income during retirement </p>
         </div>
         <!-- <div class="col-lg-7 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div> -->
-        <div class="col-lg-7 order-lg-2 text-white showcase-img"><img src="img/graph.png" alt="Italian Trulli" style="width:inherit"></div>
+        <div class="col-lg-7 order-lg-2 text-white showcase-img"><img src="img/graph.jpg" alt="Italian Trulli" style="width:inherit"></div>
       </div>
   </section>
 

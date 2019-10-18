@@ -89,15 +89,46 @@ if(isset($_POST['submit'])) {
 					//$bodyText =  "Life Long Income\r\nFirst Name: Brandon";
 					
 					$fname=$_POST['fname'];
-					//$fname = mysql_real_escape_string($_POST['fname']);
+					$famname=$_POST['famname'];
+					$agegroup='';
+					if ($_POST['agegroup'] == '0025'){
+						$agegroup='Below 25 years old';
+					} elseif($_POST['agegroup'] == '2530'){
+						$agegroup='25 - 30 years old';
+					} elseif($_POST['agegroup'] == '3135'){
+						$agegroup='31 - 35 years old';
+					} elseif($_POST['agegroup'] == '3640'){
+						$agegroup='36 - 40 years old';
+					} elseif($_POST['agegroup'] == '4145'){
+						$agegroup='41 - 45 years old';
+					} elseif($_POST['agegroup'] == '4650'){
+						$agegroup='46 - 50 years old';
+					} else{
+						$agegroup='Above 50 years old';
+					}
+					$tel=$_POST['tel'];
+					$email=$_POST['email'];
+					$income=$_POST['income'];
+					$saving=$_POST['saving'];
+					$referral=$_POST['referral'];
 					
+
+	
 					// The HTML-formatted body of the email
 					//$bodyHtml = "<h1>Life Long Income</h1><p>First Name: {$fname}</p>";
 					$bodyText =  "Email Test\r\nThis email was sent through the
 						Amazon SES SMTP interface using the PHPMailer class.";
 
 					// The HTML-formatted body of the email
-					$bodyHtml = "<h1>Email Test</h1><p>This email {$fname}</p>";
+					$bodyHtml = "<h1>Email Test</h1>
+								<p>First Name: {$fname}</p>
+								<p>Family Name: {$famname}</p>
+								<p>Age Group: {$agegroup}</p>
+								<p>Contact Number: {$tel}</p>
+								<p>Email address: {$email}</p>
+								<p>Desired Passive Income: {$income}</p>
+								<p>Monthly Savings willing to set aside: {$saving}</p>
+								<p>Referral Name: {$referral}</p>";
 						
 						//was sent through the
 						//<a href="https://aws.amazon.com/ses">Amazon SES</a> SMTP

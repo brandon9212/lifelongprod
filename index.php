@@ -86,16 +86,26 @@ if(isset($_POST['submit'])) {
 					$subject = 'Life Long Income Notification';
 
 					// The plain-text body of the email
-					$bodyText =  "Email Test\r\nThis email was sent through the
-						Amazon SES SMTP interface using the PHPMailer class.";
-					$bodyHtml = '<h1>Email Test</h1>
-						<p>This email was sent through the
-						<a href="https://aws.amazon.com/ses">Amazon SES</a> SMTP
-						interface using the <a href="https://github.com/PHPMailer/PHPMailer">
-						PHPMailer</a> class.</p>';
+					$bodyText =  "Life Long Income\r\nFirst Name: Brandon";
 					
-
-
+					
+					$fname = mysql_real_escape_string($_POST['fname']);
+					
+					// The HTML-formatted body of the email
+					$bodyHtml = "<h1>Life Long Income</h1><p>First Name: {$fname}</p>";
+			
+					//	'<p> First Name:'$fname'</p>'
+					//	'<p> Family Name:'$_POST['famname']'</p>'
+					//	'<p> Age Group:'$_POST['agegroup']'</p>'
+					//	'<p> Contact Number:'$_POST['tel']'</p>'
+					//	'<p> Email address:'$_POST['email']'</p>'
+					//	'<p> Desired Passive Income:'$_POST['income']'</p>'
+					//	'<p> Monthly Savings:'$_POST['saving']'</p>'
+					//	'<p> Referral:'$_POST['referral']'</p>'
+					//$bodyHtml .=	'<p>This email was sent through the
+					//	<a href="https://aws.amazon.com/ses">Amazon SES</a> SMTP
+					//	interface using the <a href="https://github.com/PHPMailer/PHPMailer">
+					//	PHPMailer</a> class.</p>';
 
 					$mail = new PHPMailer(true);
 						$mail->isSMTP();

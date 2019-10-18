@@ -86,7 +86,7 @@ if(isset($_POST['submit'])) {
 					$subject = 'TEST EMAIL!!!';
 
 					// The plain-text body of the email
-					$bodyText =  "Email Test\r\nThis email was sent through the
+					$bodyText =  "Email Test2\r\nThis email was sent through the
 						Amazon SES SMTP interface using the PHPMailer class.";
 
 					// The HTML-formatted body of the email

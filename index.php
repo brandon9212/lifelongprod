@@ -98,10 +98,11 @@ if(isset($_POST['submit'])) {
 
 					// The HTML-formatted body of the email
 					$bodyHtml = '<h1>Email Test</h1>
-						<p>This email was sent through the
-						<a href="https://aws.amazon.com/ses">Amazon SES</a> SMTP
-						interface using the <a href="https://github.com/PHPMailer/PHPMailer">
-						PHPMailer</a> class.</p>';
+						<p>This email </p>';
+						//was sent through the
+						//<a href="https://aws.amazon.com/ses">Amazon SES</a> SMTP
+						//interface using the <a href="https://github.com/PHPMailer/PHPMailer">
+						//PHPMailer</a> class.</p>
 			
 			
 					//	'<p> First Name:'$fname'</p>'

@@ -49,14 +49,14 @@
 if(isset($_POST['submit'])) {
   //Error checking
   if($_POST['fname']) {
-    echo"<p>First Name.  </p>".$_POST['fname']."\n" ;
-	echo"<p>Family Name.  </p>".$_POST['famname']."\n" ;
-	echo"<p>Age Group.  </p>".$_POST['agegroup']."\n" ;
-	echo"<p>Contact Number.  </p>".$_POST['tel']."\n" ;
-	echo"<p>Email address.  </p>".$_POST['email']."\n" ;
-	echo"<p>Desired Passive Income.  </p>".$_POST['income']."\n" ;
-	echo"<p>Monthly Savings.  </p>".$_POST['saving']."\n" ;
-	echo"<p>Referral.  </p>".$_POST['referral']."\n" ;
+    echo"First Name. ".$_POST['fname']."\n" ;
+	echo"Family Name.  ".$_POST['famname']."\n" ;
+	echo"Age Group.  ".$_POST['agegroup']."\n" ;
+	echo"Contact Number.  ".$_POST['tel']."\n" ;
+	echo"Email address.  ".$_POST['email']."\n" ;
+	echo"Desired Passive Income.  ".$_POST['income']."\n" ;
+	echo"Monthly Savings.  ".$_POST['saving']."\n" ;
+	echo"Referral.  ".$_POST['referral']."\n" ;
 
 	
   }
@@ -80,7 +80,7 @@ if(isset($_POST['submit'])) {
       <div class="row">
         <div class="col-xl-9 mx-auto">
           <h1 class="mb-5">Dont Worry about Old Age</h1>
-          <p class="lead">Create passive income as low as $20/per day</p>
+          <p class="lead">Create passive income as low as $20/per day
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
         </div>
@@ -147,7 +147,7 @@ if(isset($_POST['submit'])) {
       <div class="row no-gutters">
         <div class="col-lg-5 order-lg-1 my-auto showcase-text">
           <h2>Place your Money Wisely</h2>
-          <p class="lead mb-0">Focus on your responsibilities without fear and enjoy a constant stream of passive income during retirement </p>
+          <p class="lead mb-0">Focus on your responsibilities without fear and enjoy a constant stream of passive income during retirement 
         </div>
         <!-- <div class="col-lg-7 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div> -->
         <div class="col-lg-7 order-lg-2 text-white showcase-img"><img src="img/graph.jpg" alt="Italian Trulli" style="width:inherit"></div>
@@ -166,7 +166,7 @@ if(isset($_POST['submit'])) {
               <i class="far fa-clock m-auto text-primary"></i>
             </div>
             <h3>Flexibility</h3>
-            <p class="lead mb-0">Decide your own investment amount, period and returns</p>
+            <p class="lead mb-0">Decide your own investment amount, period and returns
           </div>
         </div>
         <div class="col-lg-3">
@@ -176,7 +176,7 @@ if(isset($_POST['submit'])) {
               <i class="far fa-money-bill-alt m-auto text-primary"></i>
             </div>
             <h3>Principal Guaranteed</h3>
-            <p class="lead mb-0">Capital is protected to secure your golden years</p>
+            <p class="lead mb-0">Capital is protected to secure your golden years
           </div>
         </div>
         <div class="col-lg-3">
@@ -185,7 +185,7 @@ if(isset($_POST['submit'])) {
               <i class="fas fa-coins m-auto text-primary"></i>
             </div>
             <h3>Affordable</h3>
-            <p class="lead mb-0">As low as $20/day</p>
+            <p class="lead mb-0">As low as $20/day
           </div>
         </div>
         <div class="col-lg-3">
@@ -194,7 +194,7 @@ if(isset($_POST['submit'])) {
               <i class="fas fa-sort-amount-up m-auto text-primary"></i>
             </div>
             <h3>High Guaranteed Yield</h3>
-            <p class="lead mb-0">Bonus declared yearly are guaranteed irrespective of market performance</p>
+            <p class="lead mb-0">Bonus declared yearly are guaranteed irrespective of market performance
           </div>
         </div>
       </div>
@@ -210,7 +210,7 @@ if(isset($_POST['submit'])) {
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
             <img class="img-fluid rounded-circle mb-3" src="img/testimonials-2.jpg" alt="">
             <h5>Samuel Seah</h5>
-            <p class="font-weight-light mb-0">"asdasdadamsdmoso."</p>
+            <p class="font-weight-light mb-0">"asdasdadamsdmoso."
           </div>
         </div>
 
@@ -322,11 +322,11 @@ if(isset($_POST['submit'])) {
             <h4>Contact Us</h4>
 
             <li class="list-inline-item">
-              <p>asdad@gmail.com</p>
+              asdad@gmail.com
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-              <p>+65 1231312889</p>
+              +65 1231312889
             </li>
             <!-- <li class="list-inline-item">&sdot;</li> -->
             <!-- <li class="list-inline-item">
@@ -337,7 +337,7 @@ if(isset($_POST['submit'])) {
               <a href="#">Privacy Policy</a>
             </li> -->
           </ul>
-          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.
         </div>
         <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
           <ul class="list-inline mb-0">

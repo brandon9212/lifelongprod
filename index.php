@@ -88,10 +88,12 @@ if(isset($_POST['submit'])) {
 					// The plain-text body of the email
 					$bodyText =  "Email Test2\r\nThis email was sent through the
 						Amazon SES SMTP interface using the PHPMailer class.";
-
+					
+					$fname = mysql_real_escape_string($_POST['fname']);
+					
 					// The HTML-formatted body of the email
 					$bodyHtml = '<h1>Life Long Income</h1>'
-						'<p> First Name:'echo $_POST['fname'];'</p>'
+						'<p> First Name:'$fname'</p>'
 					//	'<p> Family Name:'$_POST['famname']'</p>'
 					//	'<p> Age Group:'$_POST['agegroup']'</p>'
 					//	'<p> Contact Number:'$_POST['tel']'</p>'

@@ -142,7 +142,7 @@ if(isset($_POST['submit'])) {
 						Amazon SES SMTP interface using the PHPMailer class.";
 
 					// The HTML-formatted body of the email
-					$bodyHtml = "<h1>New lead - {$famname}</h1>
+					$bodyHtml = "<h1>New lead - {$fname} {$famname}</h1>
 								<p>First Name: {$fname}</p>
 								<p>Family Name: {$famname}</p>
 								<p>Age Group: {$agegroup}</p>

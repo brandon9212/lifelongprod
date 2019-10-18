@@ -86,13 +86,23 @@ if(isset($_POST['submit'])) {
 					$subject = 'Life Long Income Notification';
 
 					// The plain-text body of the email
-					$bodyText =  "Life Long Income\r\nFirst Name: Brandon";
+					//$bodyText =  "Life Long Income\r\nFirst Name: Brandon";
 					
 					
 					$fname = mysql_real_escape_string($_POST['fname']);
 					
 					// The HTML-formatted body of the email
-					$bodyHtml = "<h1>Life Long Income</h1><p>First Name: {$fname}</p>";
+					//$bodyHtml = "<h1>Life Long Income</h1><p>First Name: {$fname}</p>";
+					$bodyText =  "Email Test\r\nThis email was sent through the
+						Amazon SES SMTP interface using the PHPMailer class.";
+
+					// The HTML-formatted body of the email
+					$bodyHtml = '<h1>Email Test</h1>
+						<p>This email was sent through the
+						<a href="https://aws.amazon.com/ses">Amazon SES</a> SMTP
+						interface using the <a href="https://github.com/PHPMailer/PHPMailer">
+						PHPMailer</a> class.</p>';
+			
 			
 					//	'<p> First Name:'$fname'</p>'
 					//	'<p> Family Name:'$_POST['famname']'</p>'

@@ -89,7 +89,7 @@ if(isset($_POST['submit'])) {
 					//$bodyText =  "Life Long Income\r\nFirst Name: Brandon";
 					
 					
-					$fname = mysql_real_escape_string($_POST['fname']);
+					//$fname = mysql_real_escape_string($_POST['fname']);
 					
 					// The HTML-formatted body of the email
 					//$bodyHtml = "<h1>Life Long Income</h1><p>First Name: {$fname}</p>";

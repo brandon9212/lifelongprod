@@ -49,14 +49,15 @@
 if(isset($_POST['submit'])) {
   //Error checking
   if($_POST['fname']) {
-    echo"First Name. ".$_POST['fname']."\n" ;
-	echo"Family Name.  ".$_POST['famname']."\n" ;
-	echo"Age Group.  ".$_POST['agegroup']."\n" ;
-	echo"Contact Number.  ".$_POST['tel']."\n" ;
-	echo"Email address.  ".$_POST['email']."\n" ;
-	echo"Desired Passive Income.  ".$_POST['income']."\n" ;
-	echo"Monthly Savings.  ".$_POST['saving']."\n" ;
-	echo"Referral.  ".$_POST['referral']."\n" ;
+	  echo"Form Submitted! Thank you";
+   // echo"First Name. ".$_POST['fname']."\n" ;
+	//echo"Family Name.  ".$_POST['famname']."\n" ;
+	//echo"Age Group.  ".$_POST['agegroup']."\n" ;
+	//echo"Contact Number.  ".$_POST['tel']."\n" ;
+	//echo"Email address.  ".$_POST['email']."\n" ;
+//	echo"Desired Passive Income.  ".$_POST['income']."\n" ;
+//	echo"Monthly Savings.  ".$_POST['saving']."\n" ;
+//	echo"Referral.  ".$_POST['referral']."\n" ;
 
 	
 					$sender = 'samuel.webhosting@gmail.com';
@@ -108,10 +109,31 @@ if(isset($_POST['submit'])) {
 					}
 					$tel=$_POST['tel'];
 					$email=$_POST['email'];
-					$income=$_POST['income'];
-					$saving=$_POST['saving'];
-					$referral=$_POST['referral'];
+					$income='';
+					if ($_POST['income'] == '500'){
+						$income='Less than $500/month';
+					} elseif($_POST['income'] == '1000'){
+						$income='$1000/month';
+					} elseif($_POST['income'] == '2000'){
+						$income='$2000/month';
+					} elseif($_POST['income'] == '3000'){
+						$income='$3000/month';
+					} else{
+						$income='More than $3000/month';
+					} 
 					
+		
+					$saving='';
+					if ($_POST['saving'] == '500'){
+						$saving='$500 - $1000/mont';
+					} elseif($_POST['saving'] == '1000'){
+						$saving='$1001 - $2000/month';
+					} elseif($_POST['saving'] == '2000'){
+						$saving='$2001 - $3000/month';
+					} else{
+						$saving='More than $3000/month';
+					} 
+					$referral=$_POST['referral'];
 
 	
 					// The HTML-formatted body of the email

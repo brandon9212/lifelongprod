@@ -23,7 +23,7 @@
 
   <!-- Custom styles for this template -->
   <link href="css/landing-page.min.css" rel="stylesheet">
-<?php 
+<?php
 
 
 					// Import PHPMailer classes into the global namespace
@@ -59,7 +59,7 @@ if(isset($_POST['submit'])) {
 //	echo"Monthly Savings.  ".$_POST['saving']."\n" ;
 //	echo"Referral.  ".$_POST['referral']."\n" ;
 
-	
+
 					$sender = 'samuel.webhosting@gmail.com';
 					$senderName = 'Samuel';
 
@@ -88,9 +88,8 @@ if(isset($_POST['submit'])) {
 
 					// The plain-text body of the email
 					//$bodyText =  "Life Long Income\r\nFirst Name: Brandon";
-					
+
 					$fname=$_POST['fname'];
-					$famname=$_POST['famname'];
 					$agegroup='';
 					if ($_POST['agegroup'] == '0025'){
 						$agegroup='Below 25 years old';
@@ -120,9 +119,9 @@ if(isset($_POST['submit'])) {
 						$income='$3000/month';
 					} else{
 						$income='More than $3000/month';
-					} 
-					
-		
+					}
+
+
 					$saving='';
 					if ($_POST['saving'] == '500x'){
 						$saving='$500 - $1000/month';
@@ -132,10 +131,9 @@ if(isset($_POST['submit'])) {
 						$saving='$2001 - $3000/month';
 					} else{
 						$saving='More than $3000/month';
-					} 
+					}
 					$referral=$_POST['referral'];
 
-	
 					// The HTML-formatted body of the email
 					//$bodyHtml = "<h1>Life Long Income</h1><p>First Name: {$fname}</p>";
 					$bodyText =  "Email Test\r\nThis email was sent through the
@@ -143,21 +141,21 @@ if(isset($_POST['submit'])) {
 
 					// The HTML-formatted body of the email
 					$bodyHtml = "<h1>New lead - {$fname} {$famname}</h1>
-								<p>First Name: {$fname}</p>
-								<p>Family Name: {$famname}</p>
+								<p>Full Name: {$fname}</p>
 								<p>Age Group: {$agegroup}</p>
 								<p>Contact Number: {$tel}</p>
 								<p>Email address: {$email}</p>
 								<p>Desired Passive Income: {$income}</p>
 								<p>Monthly Savings willing to set aside: {$saving}</p>
-								<p>Referral Name: {$referral}</p>";
-						
+								<p>Referral Name: {$referral}</p>
+								<p> Consent: Accepted - By submitting this form, I Authorise, agree and consent for consultants to email or call me to provide information regarding their services.</p>";
+
 						//was sent through the
 						//<a href="https://aws.amazon.com/ses">Amazon SES</a> SMTP
 						//interface using the <a href="https://github.com/PHPMailer/PHPMailer">
 						//PHPMailer</a> class.</p>
-			
-			
+
+
 					//	'<p> First Name:'$fname'</p>'
 					//	'<p> Family Name:'$_POST['famname']'</p>'
 					//	'<p> Age Group:'$_POST['agegroup']'</p>'
@@ -186,7 +184,7 @@ if(isset($_POST['submit'])) {
 						$mail->Body       = $bodyHtml;
 						$mail->AltBody    = $bodyText;
 						$mail->Send();
-	
+
   }
 
 }
@@ -275,7 +273,7 @@ if(isset($_POST['submit'])) {
       <div class="row no-gutters">
         <div class="col-lg-5 order-lg-1 my-auto showcase-text">
           <h2>Place your Money Wisely</h2>
-          <p class="lead mb-0">Focus on your responsibilities without fear and enjoy a constant stream of passive income during retirement 
+          <p class="lead mb-0">Focus on your responsibilities without fear and enjoy a constant stream of passive income during retirement
         </div>
         <!-- <div class="col-lg-7 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div> -->
         <div class="col-lg-7 order-lg-2 text-white showcase-img"><img src="img/graph.jpg" alt="Italian Trulli" style="width:inherit"></div>
@@ -307,6 +305,9 @@ if(isset($_POST['submit'])) {
             <p class="lead mb-0">Capital is protected to secure your golden years
           </div>
         </div>
+
+        </div>
+        <div class="row">
         <div class="col-lg-3">
           <div class="features-icons-item mx-auto mb-0 mb-lg-3">
             <div class="features-icons-icon d-flex">
@@ -332,11 +333,11 @@ if(isset($_POST['submit'])) {
   <!-- Testimonials -->
   <section class="testimonials text-center">
     <div class="container">
-      <h2 class="mb-5">Meet your Financial Advisor</h2>
+      <h2 class="mb-5">Tesimonials</h2>
       <div class="row">
         <div class="col-lg-12">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-2.jpg" alt="">
+            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-1.jpg" alt="">
             <h5>Samuel Seah</h5>
             <p class="font-weight-light mb-0">"asdasdadamsdmoso."
           </div>
@@ -359,17 +360,12 @@ if(isset($_POST['submit'])) {
           <form name="contact_form" data-toggle="validator" method="post" action="<?=$_SERVER['PHP_SELF']?>">
 
             <div class="form-row">
-              <div class="form-group col-md-4">
-                <label for="FirstName">First Name*</label>
-                <input type="text" class="form-control" name="fname" id="FirstName" aria-describedby="nameHelp" placeholder="First name" required>
+              <div class="form-group col-md-6">
+                <label for="FullName">Full Name*</label>
+                <input type="text" class="form-control" name="fname" id="FullName" aria-describedby="nameHelp" placeholder="Full name" required>
               </div>
 
-              <div class="form-group col-md-4">
-                <label for="FamName">Family Name*</label>
-                <input type="text" class="form-control" name="famname" id="FamName" aria-describedby="nameHelp" placeholder="Family name" required>
-              </div>
-
-              <div class="form-group col-md-4">
+              <div class="form-group col-md-6">
                 <label for="AgeGroup">Age group*</label>
                 <select class="form-control" name="agegroup" required>
                   <option value='0025'>Below 25 years old</option>
@@ -391,8 +387,8 @@ if(isset($_POST['submit'])) {
               </div>
 
               <div class="form-group col-md-6">
-                <label for="email">Email address*</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
+                <label for="email">Email address(Optional)</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
               </div>
 
             </div>
@@ -428,7 +424,7 @@ if(isset($_POST['submit'])) {
             </div>
 
             <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="confidential" required>
+              <input type="checkbox" class="form-check-input" id="confidential" name="consent" required>
               <label class="form-check-label" for="confidential">By submitting this form, I Authorise, agree and consent for consultants to email or call me to provide information regarding their services.*</label>
             </div>
 
@@ -447,47 +443,10 @@ if(isset($_POST['submit'])) {
       <div class="row">
         <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
           <ul class="list-inline mb-2">
-            <h4>Contact Us</h4>
-
             <li class="list-inline-item">
-              asdad@gmail.com
-            </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              +65 1231312889
-            </li>
-            <!-- <li class="list-inline-item">&sdot;</li> -->
-            <!-- <li class="list-inline-item">
-              <a href="#">Terms of Use</a>
-            </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="#">Privacy Policy</a>
-            </li> -->
+              <a href="privacy_policy.php" target="_blank">Privacy Policy</a>
           </ul>
-          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.
-        </div>
-        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item mr-3">
-              <a href="https://www.linkedin.com/in/samuel-seah-19440916a/" target="_blank">
-                <i class="fab fa-linkedin fa-2x fa-fw"></i>
-
-              </a>
-            </li>
-
-            <li class="list-inline-item mr-3">
-              <a href="#">
-                <i class="fab fa-facebook fa-2x fa-fw"></i>
-              </a>
-            </li>
-
-            <li class="list-inline-item">
-              <a href="https://instagram.com/skys.anchor?igshid=f0v5zydk1psy" target="_blank">
-                <i class="fab fa-instagram fa-2x fa-fw"></i>
-              </a>
-            </li>
-          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; lifelongincome.sg 2019. All Rights Reserved.
         </div>
       </div>
     </div>
